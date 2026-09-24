@@ -1,0 +1,26 @@
+using PlaywrightGaugeFramework.Utilities;
+
+namespace PlaywrightGaugeFramework.Pages;
+
+public class LoginPage : BasePage
+{
+    public async Task NavigateToApplication()
+    {
+        await Page.GotoAsync(ConfigManager.BaseUrl);
+    }
+
+    public async Task EnterUsername(string username)
+    {
+       await Page.FillAsync("input[name='uid']", username);
+    }
+
+    public async Task EnterPassword(string password)
+    {
+        await Page.FillAsync("input[name='password']", password);
+    }
+
+    public async Task ClickLogin()
+    {
+        await Page.ClickAsync("input[name='btnLogin']");
+    }
+}

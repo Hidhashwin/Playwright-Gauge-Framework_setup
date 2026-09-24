@@ -1,0 +1,34 @@
+# Visual Studio folders
+.vs
+.vscode
+
+# Gauge metadata
+.gauge
+
+# Gauge logs
+logs
+
+# Gauge build output
+gauge_bin
+
+# Reports
+reports
+
+# C# build output
+bin
+obj
+
+# Playwright
+playwright-report
+test-results
+
+# Screenshots
+Screenshots
+screenshots
+
+# User-specific files
+*.user
+*.suo
+
+# Temporary files
+*.cache
