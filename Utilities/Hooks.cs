@@ -1,4 +1,3 @@
-using System.Threading.Tasks;
 using Gauge.CSharp.Lib.Attribute;
 using PlaywrightGaugeFramework.Drivers;
 
@@ -17,4 +16,4 @@ public class Hooks
     {
         await DriverFactory.CloseBrowser();
     }
-}
+}   

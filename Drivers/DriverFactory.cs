@@ -17,7 +17,7 @@ public static class DriverFactory
     public static async Task InitializeBrowser()
 {
     Playwright = await Microsoft.Playwright.Playwright.CreateAsync();
-
+    Console.WriteLine($"Browser: {ConfigManager.Browser}");
     switch (ConfigManager.Browser.ToLower())
     {
         case "chrome":
@@ -25,7 +25,8 @@ public static class DriverFactory
                 new BrowserTypeLaunchOptions
                 {
                     Headless = ConfigManager.Headless,
-                    Channel = "chrome"
+                    Channel = "chrome",       
+                   
                 });
             break;
 
@@ -33,8 +34,9 @@ public static class DriverFactory
             Browser = await Playwright.Chromium.LaunchAsync(
                 new BrowserTypeLaunchOptions
                 {
-                    Headless = ConfigManager.Headless,
-                    Channel = "msedge"
+                   Headless = ConfigManager.Headless,
+                    Channel = "msedge",
+                    
                 });
             break;
 
@@ -59,8 +61,12 @@ public static class DriverFactory
                 $"Unsupported browser: {ConfigManager.Browser}");
     }
 
-    Context = await Browser.NewContextAsync();
+   Context = await Browser.NewContextAsync();
+   
     Page = await Context.NewPageAsync();
+    //temproary
+    //Console.WriteLine($"Viewport Width: {Page.ViewportSize?.Width}");
+//Console.WriteLine($"Viewport Height: {Page.ViewportSize?.Height }");
 
     // Add here
     Page.SetDefaultTimeout(ConfigManager.Timeout);

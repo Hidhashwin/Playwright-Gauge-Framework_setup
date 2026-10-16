@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    
     <PackageReference Include="Gauge.CSharp.Lib" Version="0.12.*" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="10.0.12" />
     <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="10.0.12" />

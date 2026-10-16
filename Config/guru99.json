@@ -1,5 +1,5 @@
 {
-"Browser": "chrome",
+"Browser": "edge",
 "Headless": false,
 "BaseUrl": "https://demo.guru99.com/V1/index.php",
 "Timeout": 30000
