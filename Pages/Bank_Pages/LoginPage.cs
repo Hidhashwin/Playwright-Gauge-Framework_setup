@@ -1,14 +1,11 @@
     using PlaywrightGaugeFramework.Utilities;
+    using Microsoft.Playwright; 
 
     namespace PlaywrightGaugeFramework.Pages;
 
     public class LoginPage : BasePage
     {
-        public async Task NavigateToApplication()
-        {
-            await Page.GotoAsync(ConfigManager.BaseUrl);
-        }
-
+      
         public async Task EnterUsername(string username)
         {
         await Page.FillAsync("input[name='uid']", username);
@@ -27,4 +24,4 @@
 {
     await Page.WaitForTimeoutAsync(seconds * 1000);
 }
-    }
+    }   

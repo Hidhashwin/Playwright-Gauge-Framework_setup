@@ -18,6 +18,10 @@ public static class DriverFactory
 {
     Playwright = await Microsoft.Playwright.Playwright.CreateAsync();
     Console.WriteLine($"Browser: {ConfigManager.Browser}");
+    
+Console.WriteLine($"Headless: [{ConfigManager.Headless}]");
+Console.WriteLine($"Timeout: [{ConfigManager.Timeout}]");
+Console.WriteLine($"Browser: [{ConfigManager.Browser ?? "NULL"}]");
     switch (ConfigManager.Browser.ToLower())
     {
         case "chrome":

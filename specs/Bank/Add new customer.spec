@@ -2,7 +2,7 @@
 
 ## Valid Login
 
-* Open Guru99 application
+* Open Guru99 Bank application
 * Login with username "mngr668610" and password "zAhUnEp"
 * Then user clicks new customer option
 * Then the user enters customer name as "Dhashwin"

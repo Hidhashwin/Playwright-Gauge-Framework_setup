@@ -8,10 +8,10 @@ public class LoginSteps
 {
     private readonly LoginPage _loginPage = new();
 
-    [Step("Open Guru99 application")]
-    public async Task OpenApplication()
+    [Step("Open Guru99 Bank application")]
+    public async Task OpenGuru99Bank()
     {
-        await _loginPage.NavigateToApplication();
+    await _loginPage.NavigateToApplication("Guru99Bank");
     }
 
     [Step("Login with username <username> and password <password>")]

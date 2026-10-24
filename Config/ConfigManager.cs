@@ -9,16 +9,9 @@ public static class ConfigManager
 
     static ConfigManager()
     {
-        var masterConfig = new ConfigurationBuilder()
-            .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile("Config/appsettings.json", false, true)
-            .Build();
-
-        var application = masterConfig["Application"];
-
         Configuration = new ConfigurationBuilder()
             .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile($"Config/{application}.json", false, true)
+            .AddJsonFile("Config/appsettings.json", false, true)
             .Build();
     }
 
@@ -28,9 +21,11 @@ public static class ConfigManager
     public static bool Headless =>
         bool.Parse(Configuration["Headless"]!);
 
-    public static string BaseUrl =>
-        Configuration["BaseUrl"]!;
-
     public static int Timeout =>
         int.Parse(Configuration["Timeout"]!);
+
+    public static string GetBaseUrl(string applicationName)
+    {
+        return Configuration[$"Applications:{applicationName}:BaseUrl"]!;
+    }
 }
